@@ -1,0 +1,31 @@
+#!/bin/bash
+
+DATE=$(date "+%Y%m%d--%R")
+#如果文件名存在
+if [ ! "$1" ]
+then
+	echo 'please input an argument as the fielanem!'
+	echo 1
+fi
+
+#如果文件已经创建，直接用vim打开
+if [ -f "$1" ]
+then
+	vim "$1"
+	exit 2
+fi
+
+#创建文件
+touch "$1"
+
+#添加注释
+echo "#!/bin/bash" >> "$1"
+echo "#Description:" >> "$1"
+echo "#" >> "$1"
+echo "#Author: XYJ" >> "$1"
+echo "#Version:1.0" >> "$1"
+echo "#CreateTime:'$DATE'" >> "$1"
+
+
+#打开文件
+vim "$1";
