@@ -13,7 +13,7 @@ int main(int argc,char *argv[])
 {
 //判断参数
 	if(argc <= 1){
-		printf("mkdir:Usage:dirstr\n");
+		printf("error\n");
 		exit(1);
 	}
 //遍历参数，对每个参数进行操作
